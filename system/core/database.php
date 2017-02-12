@@ -440,9 +440,7 @@ class cmsDatabase {
 
             foreach ($update_data as $field=>$value) {
 
-                $value = $this->prepareValue($field, $value);
-
-                $set[] = "`{$field}` = {$value}";
+                $set[] = "`{$field}` = VALUES({$field})";
 
             }
 
